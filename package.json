@@ -1,0 +1,22 @@
+{
+  "name": "clothescompanyapi",
+  "version": "1.0.0",
+  "description": "This a NodeJS API service which exposes some APIs to help the Clothes Company Web Application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fToledo29/CCAPI.git"
+  },
+  "author": "Fernando Toledo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fToledo29/CCAPI/issues"
+  },
+  "homepage": "https://github.com/fToledo29/CCAPI#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
