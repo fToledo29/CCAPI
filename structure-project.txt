@@ -1,0 +1,16 @@
+-loaded-libraries
+    -express-app
+    -helper-libraries
+    -custom-middlewares
+    -data
+
+-set-port
+
+- middlewares
+    -express-parser-JSON
+    -custom-middlewares
+    -endpoints
+
+-validation-function
+
+-app-listener

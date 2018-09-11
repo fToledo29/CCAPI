@@ -1,0 +1,6 @@
+{
+    "name": "clothescompanyapi - Production",
+    "mail": {
+        "host": "production-mail-server"
+    }
+}

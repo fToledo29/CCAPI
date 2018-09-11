@@ -1,13 +1,43 @@
+ // --Express.
 const express = require('express');
 const app = express();
+// --Util libraries
+const Joi =  require('joi');
+require('dotenv').config();
+const config = require('config');
+const morgan = require('morgan');
+// const helmet = require('helmet');
+// --Middlewares
+const logger = require('./custom-middlewares/logger');
+const auth = require('./custom-middlewares/authentication');
+// --Data.
 const products = require('./data/products.json');
 const messages = require('./messages');
-const Joi =  require('joi');
 const port = process.env.PORT || 3000;
 
+// Configuration
+console.log('Current environment: ', process.env.NODE_ENV);
+console.log('Mail server: ', config.get('mail.host'));
+console.log('Application name: ', config.get('name'));
+// console.log('Mail Password: ', config.get('mail.password'));
+
+// ***** Custom middlewares *****
+// *(logger)*
+app.use(auth);
+// *(Authentication)*
+app.use(logger);
+// ***** Third-party middlewares *****
 app.use(express.json());
+// app.use(helmet());
+console.log('Getting env: ', app.get('env'));
+if(app.get('env.NODE_ENV') === 'development') {
+    app.use(morgan('tiny'));
+    console.log('Morgan enabled...');    
+}
 
-
+/**
+ * Gets all the stored products.
+ */
 app.get('/api/products', (req, res) => {
     res.send(products);
 });

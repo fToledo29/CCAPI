@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/fToledo29/CCAPI#readme",
   "dependencies": {
+    "config": "^2.0.1",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "joi": "^13.6.0"
+    "joi": "^13.6.0",
+    "morgan": "^1.9.0"
   }
 }
